@@ -28,7 +28,7 @@ Chrome插件是一个用Web技术开发、用来增强浏览器功能的软件�
 
 ![360抢票王插件dll截图](http://image.liuxianan.com/201706/20170626_112802_406_9027.png)
 
-> 由于安全原因，Chrome浏览器42以上版本已经陆续不再支持NPAPI插件，取而代之的是更安全的PPAPI。
+> 由于安全原因，Chrome浏览器42以上版本已经陆续不再支持**NPAPI**插件，取而代之的是更安全的**PPAPI**。
 
 ## 学习Chrome插件开发有什么意义
 
@@ -595,7 +595,7 @@ chrome.contextMenus.update(menuItemId, updateProperties);
 // 几个参数依次为：panel标题、图标（其实设置了也没地方显示）、要加载的页面、加载成功后的回调
 chrome.devtools.panels.create('MyPanel', 'img/icon.png', 'mypanel.html', function(panel)
 {
-	console.log('自定义面板创建成功！'); // 注意这个log一般看不到
+	console.log('自定义面板创建成功！'); // 注意这个log一般看不到！其实是能看到的。请看下面的动图。
 });
 
 // 创建自定义侧边栏
@@ -613,7 +613,13 @@ setPage时的效果：
 
 以下截图示例的代码：
 
+
+
 ![](http://image.liuxianan.com/201706/20170613_220345_133_1766.png)
+
+查看自定义devtools的log：
+
+![mypanel](demo\img\mypanel.gif)
 
 ```javascript
 // 检测jQuery
