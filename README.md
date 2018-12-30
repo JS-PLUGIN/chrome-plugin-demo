@@ -619,7 +619,7 @@ setPage时的效果：
 
 查看自定义devtools的log：
 
-![mypanel](demo\img\mypanel.gif)
+![mypanel](demo/img/mypanel.gif)
 
 ```javascript
 // 检测jQuery
