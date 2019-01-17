@@ -1,4 +1,4 @@
-﻿console.log('这是content script!');
+console.log('这是content script!');
 
 // 注意，必须设置了run_at=document_start 此段代码才会生效
 document.addEventListener('DOMContentLoaded', function()
@@ -135,17 +135,18 @@ window.addEventListener("message", function(e)
 	}
 }, false);
 
-
+//自定义事件，不建议通过dom节点保存数据来通信
 function initCustomEventListen() {
-	var hiddenDiv = document.getElementById('myCustomEventDiv');
-	if(!hiddenDiv) {
-		hiddenDiv = document.createElement('div');
-		hiddenDiv.style.display = 'none';
-		hiddenDiv.id = 'myCustomEventDiv';
-		document.body.appendChild(hiddenDiv);
-	}
-	hiddenDiv.addEventListener('myCustomEvent', function() {
-		var eventData = document.getElementById('myCustomEventDiv').innerText;
+	// var hiddenDiv = document.getElementById('myCustomEventDiv');
+	// if(!hiddenDiv) {
+	// 	hiddenDiv = document.createElement('div');
+	// 	hiddenDiv.style.display = 'none';
+	// 	hiddenDiv.id = 'myCustomEventDiv';
+	// 	document.body.appendChild(hiddenDiv);
+	// }
+	document.addEventListener('myCustomEvent', function() {
+		// var eventData = document.getElementById('myCustomEventDiv').innerText;
+		var eventData = "来自inject-script的信息"
 		tip('收到自定义事件：' + eventData);
 	});
 }

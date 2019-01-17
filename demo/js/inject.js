@@ -15,10 +15,10 @@ function sendMessageToContentScriptByPostMessage(data)
 	customEvent.initEvent('myCustomEvent', true, true);
 	// 通过事件发送消息给content-script
 	function sendMessageToContentScriptByEvent(data) {
-		data = data || '你好，我是injected-script!';
-		var hiddenDiv = document.getElementById('myCustomEventDiv');
-		hiddenDiv.innerText = data
-		hiddenDiv.dispatchEvent(customEvent);
+		// data = data || '你好，我是injected-script!';
+		// var hiddenDiv = document.getElementById('myCustomEventDiv');
+		// hiddenDiv.innerText = data
+		document.dispatchEvent(customEvent);
 	}
 	window.sendMessageToContentScriptByEvent = sendMessageToContentScriptByEvent;
 })();
